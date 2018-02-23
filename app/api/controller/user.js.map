@@ -1,0 +1,43 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/api/controller/user.js"
+    ],
+    "names": [
+        "Base",
+        "require",
+        "fs",
+        "_",
+        "module",
+        "exports",
+        "infoAction",
+        "openId",
+        "get",
+        "userInfo",
+        "model",
+        "where",
+        "weixin_openid",
+        "find",
+        "password",
+        "success",
+        "regInfo",
+        "saveAvatarAction",
+        "avatar",
+        "file",
+        "think",
+        "isEmpty",
+        "fail",
+        "avatarPath",
+        "RESOURCE_PATH",
+        "last",
+        "split",
+        "path",
+        "rename",
+        "res"
+    ],
+    "mappings": ";;AAAA,MAAMA,OAAOC,QAAQ,WAAR,CAAb;AACA,MAAMC,KAAKD,QAAQ,IAAR,CAAX;AACA,MAAME,IAAIF,QAAQ,QAAR,CAAV;;AAEAG,OAAOC,OAAP,GAAiB,cAAcL,IAAd,CAAmB;AAC5BM,YAAN,CAAiBC,MAAjB,EAAyB;AAAA;;AAAA;AACvB,UAAIA,SAAS,MAAKC,GAAL,CAAS,QAAT,CAAb;AACA,YAAMC,WAAW,MAAM,MAAKC,KAAL,CAAW,MAAX,EAAmBC,KAAnB,CAAyB,EAACC,eAAeL,MAAhB,EAAzB,EAAkDM,IAAlD,EAAvB;AACA,aAAOJ,SAASK,QAAhB;AACA,aAAO,MAAKC,OAAL,CAAa,EAACC,SAASP,QAAV,EAAb,CAAP;AAJuB;AAKxB;;AAED;;;;AAIMQ,kBAAN,GAAyB;AAAA;;AAAA;AACvB,YAAMC,SAAS,OAAKC,IAAL,CAAU,QAAV,CAAf;AACA,UAAIC,MAAMC,OAAN,CAAcH,MAAd,CAAJ,EAA2B;AACzB,eAAO,OAAKI,IAAL,CAAU,MAAV,CAAP;AACD;;AAED,YAAMC,aAAaH,MAAMI,aAAN,GAAsB,wBAAtB,GAAiDrB,EAAEsB,IAAF,CAAOtB,EAAEuB,KAAF,CAAQR,OAAOS,IAAf,EAAqB,GAArB,CAAP,CAApE;;AAEAzB,SAAG0B,MAAH,CAAUV,OAAOS,IAAjB,EAAuBJ,UAAvB,EAAmC,UAASM,GAAT,EAAc;AAC/C,eAAO,KAAKd,OAAL,EAAP;AACD,OAFD;AARuB;AAWxB;AAvBiC,CAApC",
+    "file": "../../../src/api/controller/user.js",
+    "sourcesContent": [
+        "const Base = require('./base.js');\nconst fs = require('fs');\nconst _ = require('lodash');\n\nmodule.exports = class extends Base {\n  async infoAction(openId) {\n    var openId = this.get('openId');\n    const userInfo = await this.model('user').where({weixin_openid: openId}).find();\n    delete userInfo.password;\n    return this.success({regInfo: userInfo}); \n  }\n\n  /**\n   * 保存用户头像\n   * @returns {Promise.<void>}\n   */\n  async saveAvatarAction() {\n    const avatar = this.file('avatar');\n    if (think.isEmpty(avatar)) {\n      return this.fail('保存失败');\n    }\n\n    const avatarPath = think.RESOURCE_PATH + '/static/user/avatar/1.' + _.last(_.split(avatar.path, '.'));\n\n    fs.rename(avatar.path, avatarPath, function(res) {\n      return this.success();\n    });\n  }\n};\n"
+    ]
+}

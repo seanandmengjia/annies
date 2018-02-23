@@ -1,0 +1,24 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/api/controller/index.js"
+    ],
+    "names": [
+        "Base",
+        "require",
+        "module",
+        "exports",
+        "indexAction",
+        "banner",
+        "model",
+        "where",
+        "ad_position_id",
+        "select",
+        "success"
+    ],
+    "mappings": ";;AAAA,MAAMA,OAAOC,QAAQ,WAAR,CAAb;;AAEAC,OAAOC,OAAP,GAAiB,cAAcH,IAAd,CAAmB;AAC5BI,aAAN,GAAoB;AAAA;;AAAA;AAClB,YAAMC,SAAS,MAAM,MAAKC,KAAL,CAAW,IAAX,EAAiBC,KAAjB,CAAuB,EAACC,gBAAgB,CAAjB,EAAvB,EAA4CC,MAA5C,EAArB;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA,aAAO,MAAKC,OAAL,CAAa;AAClBL,gBAAQA;AACR;AACA;AACA;AACA;AACA;AACA;AAPkB,OAAb,CAAP;AApBkB;AA6BnB;AA9BiC,CAApC",
+    "file": "../../../src/api/controller/index.js",
+    "sourcesContent": [
+        "const Base = require('./base.js');\n\nmodule.exports = class extends Base {\n  async indexAction() {\n    const banner = await this.model('ad').where({ad_position_id: 1}).select();\n    // const channel = await this.model('channel').order({sort_order: 'asc'}).select();\n    // const newGoods = await this.model('goods').field(['id', 'name', 'list_pic_url', 'retail_price']).where({is_new: 1}).limit(4).select();\n    // const hotGoods = await this.model('goods').field(['id', 'name', 'list_pic_url', 'retail_price', 'goods_brief']).where({is_hot: 1}).limit(3).select();\n    // const brandList = await this.model('brand').where({is_new: 1}).order({new_sort_order: 'asc'}).limit(4).select();\n    // const topicList = await this.model('topic').limit(3).select();\n\n    // const categoryList = await this.model('category').where({parent_id: 0, name: ['<>', '推荐']}).select();\n    // const newCategoryList = [];\n    // for (const categoryItem of categoryList) {\n    //   const childCategoryIds = await this.model('category').where({parent_id: categoryItem.id}).getField('id', 100);\n    //   const categoryGoods = await this.model('goods').field(['id', 'name', 'list_pic_url', 'retail_price']).where({category_id: ['IN', childCategoryIds]}).limit(7).select();\n    //   newCategoryList.push({\n    //     id: categoryItem.id,\n    //     name: categoryItem.name,\n    //     goodsList: categoryGoods\n    //   });\n    // }\n\n    return this.success({\n      banner: banner\n      // channel: channel,\n      // newGoodsList: newGoods,\n      // hotGoodsList: hotGoods,\n      // brandList: brandList,\n      // topicList: topicList,\n      // categoryList: newCategoryList\n    });\n  }\n};\n"
+    ]
+}

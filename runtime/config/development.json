@@ -1,0 +1,215 @@
+{
+  "admin": {
+    "port": 8360,
+    "workers": 0,
+    "stickyCluster": false,
+    "startServerTimeout": 3000,
+    "reloadSignal": "SIGUSR2",
+    "processKillTimeout": 10000,
+    "jsonpCallbackField": "callback",
+    "jsonContentType": "application/json",
+    "jsonpContentType": "application/javascript",
+    "errnoField": "errno",
+    "errmsgField": "errmsg",
+    "defaultErrno": 1000,
+    "validateDefaultErrno": 1001,
+    "default_module": "api",
+    "weixin": {
+      "appid": "wxfb9f07fa0c2da355",
+      "secret": "19663b0b4921ac8961fb1833fb53a86b",
+      "mch_id": "",
+      "partner_key": "",
+      "notify_url": ""
+    },
+    "cache": {
+      "type": "file",
+      "file": {
+        "timeout": 86400000,
+        "cachePath": "/Users/liubo/Documents/mywork/my/annie/nideshop/runtime/cache",
+        "pathDepth": 1,
+        "gcInterval": 86400000
+      }
+    },
+    "model": {
+      "type": "mysql",
+      "mysql": {
+        "logConnect": true,
+        "logSql": true,
+        "database": "nideshop",
+        "prefix": "nideshop_",
+        "encoding": "utf8mb4",
+        "host": "39.104.74.58",
+        "port": "3316",
+        "user": "root",
+        "password": "123456",
+        "dateStrings": true
+      }
+    },
+    "logger": {
+      "type": "console",
+      "console": {},
+      "file": {
+        "backups": 10,
+        "absolute": true,
+        "maxLogSize": 51200,
+        "filename": "/Users/liubo/Documents/mywork/my/annie/nideshop/logs/app.log"
+      },
+      "dateFile": {
+        "level": "ALL",
+        "absolute": true,
+        "pattern": "-yyyy-MM-dd",
+        "alwaysIncludePattern": true,
+        "filename": "/Users/liubo/Documents/mywork/my/annie/nideshop/logs/app.log"
+      }
+    }
+  },
+  "api": {
+    "port": 8360,
+    "workers": 0,
+    "stickyCluster": false,
+    "startServerTimeout": 3000,
+    "reloadSignal": "SIGUSR2",
+    "processKillTimeout": 10000,
+    "jsonpCallbackField": "callback",
+    "jsonContentType": "application/json",
+    "jsonpContentType": "application/javascript",
+    "errnoField": "errno",
+    "errmsgField": "errmsg",
+    "defaultErrno": 1000,
+    "validateDefaultErrno": 1001,
+    "default_module": "api",
+    "weixin": {
+      "appid": "wxfb9f07fa0c2da355",
+      "secret": "19663b0b4921ac8961fb1833fb53a86b",
+      "mch_id": "",
+      "partner_key": "",
+      "notify_url": ""
+    },
+    "publicController": [
+      "index",
+      "catalog",
+      "topic",
+      "auth",
+      "goods",
+      "brand",
+      "search",
+      "region"
+    ],
+    "publicAction": [
+      "comment/list",
+      "comment/count",
+      "cart/index",
+      "cart/add",
+      "cart/checked",
+      "cart/update",
+      "cart/delete",
+      "cart/goodscount",
+      "pay/notify"
+    ],
+    "cache": {
+      "type": "file",
+      "file": {
+        "timeout": 86400000,
+        "cachePath": "/Users/liubo/Documents/mywork/my/annie/nideshop/runtime/cache",
+        "pathDepth": 1,
+        "gcInterval": 86400000
+      }
+    },
+    "model": {
+      "type": "mysql",
+      "mysql": {
+        "logConnect": true,
+        "logSql": true,
+        "database": "nideshop",
+        "prefix": "nideshop_",
+        "encoding": "utf8mb4",
+        "host": "39.104.74.58",
+        "port": "3316",
+        "user": "root",
+        "password": "123456",
+        "dateStrings": true
+      }
+    },
+    "logger": {
+      "type": "console",
+      "console": {},
+      "file": {
+        "backups": 10,
+        "absolute": true,
+        "maxLogSize": 51200,
+        "filename": "/Users/liubo/Documents/mywork/my/annie/nideshop/logs/app.log"
+      },
+      "dateFile": {
+        "level": "ALL",
+        "absolute": true,
+        "pattern": "-yyyy-MM-dd",
+        "alwaysIncludePattern": true,
+        "filename": "/Users/liubo/Documents/mywork/my/annie/nideshop/logs/app.log"
+      }
+    }
+  },
+  "common": {
+    "port": 8360,
+    "workers": 0,
+    "stickyCluster": false,
+    "startServerTimeout": 3000,
+    "reloadSignal": "SIGUSR2",
+    "processKillTimeout": 10000,
+    "jsonpCallbackField": "callback",
+    "jsonContentType": "application/json",
+    "jsonpContentType": "application/javascript",
+    "errnoField": "errno",
+    "errmsgField": "errmsg",
+    "defaultErrno": 1000,
+    "validateDefaultErrno": 1001,
+    "default_module": "api",
+    "weixin": {
+      "appid": "wxfb9f07fa0c2da355",
+      "secret": "19663b0b4921ac8961fb1833fb53a86b",
+      "mch_id": "",
+      "partner_key": "",
+      "notify_url": ""
+    },
+    "cache": {
+      "type": "file",
+      "file": {
+        "timeout": 86400000,
+        "cachePath": "/Users/liubo/Documents/mywork/my/annie/nideshop/runtime/cache",
+        "pathDepth": 1,
+        "gcInterval": 86400000
+      }
+    },
+    "model": {
+      "type": "mysql",
+      "mysql": {
+        "logConnect": true,
+        "logSql": true,
+        "database": "nideshop",
+        "prefix": "nideshop_",
+        "encoding": "utf8mb4",
+        "host": "39.104.74.58",
+        "port": "3316",
+        "user": "root",
+        "password": "123456",
+        "dateStrings": true
+      }
+    },
+    "logger": {
+      "type": "console",
+      "console": {},
+      "file": {
+        "backups": 10,
+        "absolute": true,
+        "maxLogSize": 51200,
+        "filename": "/Users/liubo/Documents/mywork/my/annie/nideshop/logs/app.log"
+      },
+      "dateFile": {
+        "level": "ALL",
+        "absolute": true,
+        "pattern": "-yyyy-MM-dd",
+        "alwaysIncludePattern": true,
+        "filename": "/Users/liubo/Documents/mywork/my/annie/nideshop/logs/app.log"
+      }
+    }
+  }
+}
