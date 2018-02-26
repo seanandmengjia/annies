@@ -24,6 +24,7 @@ exports.cache = {
 /**
  * model adapter config
  * @type {Object}
+ * sh-cdb-lycelqg9.sql.tencentcdb.com:63419
  */
 exports.model = {
   type: 'mysql',
@@ -34,13 +35,13 @@ exports.model = {
   },
   mysql: {
     handle: mysql,
-    database: 'nideshop',
+    database: 'shop',
     prefix: 'nideshop_',
     encoding: 'utf8mb4',
-    host: '39.104.74.58',
-    port: '3316',
+    host: 'sh-cdb-lycelqg9.sql.tencentcdb.com',
+    port: '63419',
     user: 'root',
-    password: '123456',
+    password: 'AnnieWXTest!2345',
     dateStrings: true
   }
 };
