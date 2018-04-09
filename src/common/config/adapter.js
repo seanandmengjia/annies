@@ -38,7 +38,7 @@ exports.model = {
     database: 'shop',
     prefix: 'nideshop_',
     encoding: 'utf8mb4',
-    host: '172.17.0.15',
+    host: 'sh-cdb-lycelqg9.sql.tencentcdb.com',
     port: '63419',
     user: 'root',
     password: 'AnnieWXTest!2345',
